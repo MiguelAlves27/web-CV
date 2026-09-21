@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Miguel Alves</title>
+<meta name="description" content="Data and AI engineer focused on locally run LLM agents, document automation and production data platforms. MSc from Instituto Superior Técnico, based in Lisbon and open to relocation across Europe.">
+<meta property="og:title" content="Miguel Alves">
+<meta property="og:description" content="Data & AI Engineer">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1B47C9">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Miguel Alves</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button">Dark mode</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Miguel Alves</h1>
+        <p class="role">Data &amp; AI Engineer</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:miguelazevedoalves@gmail.com">Email me</a>
+          <a class="btn" href="CV%20-%20Miguel%20Azevedo%20Alves.pdf" download="Miguel Alves - CV.pdf">Download CV</a>
+          <a class="btn" href="https://github.com/MiguelAlves27" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/miguel-alves-a0b26a185" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="pipeline" role="img" aria-label="Animated diagram of an ETL data pipeline: source systems feed into extract, transform and load stages, ending in a data warehouse, with live-looking throughput metrics and a log below.">
+        <div class="pipeline-head">
+          <h2 class="pipeline-title">ETL pipeline</h2>
+          <span class="live-badge"><span class="live-dot"></span>Live</span>
+        </div>
+        <div class="pipeline-nodes">
+          <div class="node" style="--i:0"><span class="node-dot"></span><span class="node-label">Sources</span></div>
+          <div class="pipe-seg" style="--i:0"><span class="packet"></span></div>
+          <div class="node" style="--i:1"><span class="node-dot"></span><span class="node-label">Extract</span></div>
+          <div class="pipe-seg" style="--i:1"><span class="packet"></span></div>
+          <div class="node" style="--i:2"><span class="node-dot"></span><span class="node-label">Transform</span></div>
+          <div class="pipe-seg" style="--i:2"><span class="packet"></span></div>
+          <div class="node" style="--i:3"><span class="node-dot"></span><span class="node-label">Load</span></div>
+          <div class="pipe-seg" style="--i:3"><span class="packet"></span></div>
+          <div class="node" style="--i:4"><span class="node-dot"></span><span class="node-label">Warehouse</span></div>
+        </div>
+        <div class="pipeline-metrics" aria-hidden="true">
+          <div class="metric"><span class="metric-value" id="mRows">0</span><span class="metric-label">events / sec</span></div>
+          <div class="metric"><span class="metric-value" id="mLatency">0 ms</span><span class="metric-label">p95 latency</span></div>
+          <div class="metric"><span class="metric-value" id="mUptime">00:00:00</span><span class="metric-label">uptime</span></div>
+        </div>
+        <pre class="pipeline-log" id="pipelineLog" aria-hidden="true"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap section-grid">
+      <h2>About</h2>
+      <div>
+        <div class="prose">
+          <p>I recently finished an MSc in Computer Science and Engineering at Instituto Superior Técnico, specialising in AI and Data Science, with an Erasmus semester at Lund University.</p>
+          <p>My thesis compared 13 agentic AI architectures for automating document processing with locally run, privacy-preserving LLMs. Alongside it, I built and deployed the web platform those agents plug into.</p>
+          <p>I like working close to the details of how systems behave in practice, not just in theory. I am looking for AI and data engineering roles in Europe, ideally in Belgium.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Based in</dt><dd>Lisbon, Portugal</dd></div>
+          <div><dt>Work eligibility</dt><dd>EU citizen, available to relocate</dd></div>
+          <div><dt>Languages</dt><dd>Portuguese (native), English (fluent), French (A1), Swedish (A1)</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap section-grid">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <div class="when">Jun 2025 to Sept 2026</div>
+          <div>
+            <h3>Researcher</h3>
+            <p class="org">INESC-ID, Lisbon</p>
+            <ul>
+              <li>Designed and benchmarked 13 locally run agentic AI architectures (3 routing, 6 document filling, 4 reading) for automated bureaucratic document processing, using Qwen2.5 and Llama 3.2 served through Ollama so sensitive institutional data stays on premise.</li>
+              <li>Reached 81.3% field accuracy with the best filling agent, found that descriptive field identifiers beat raw PDF field names by up to 30.6 percentage points, and tuned the recommended pipeline to about 100 seconds per process end to end.</li>
+              <li>Built and deployed a rule-based web platform (HTML/JS, PHP, MySQL) integrated with the university's Fénix API and SSO. It replaces manual academic mobility paperwork, scored 89.88 out of 100 ("Excellent") on the System Usability Scale with 20 real users, and is live in production.</li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="when">Mar 2024 to Jun 2025</div>
+          <div>
+            <h3>Math Tutor</h3>
+            <p class="org">Clubescola, Lisbon</p>
+            <p>One-on-one mathematics tutoring with lesson plans tailored to each student's learning style, measurably improving exam performance.</p>
+          </div>
+        </li>
+        <li>
+          <div class="when">Sept 2020 to Sept 2021</div>
+          <div>
+            <h3>Embedded Software and Ground Station</h3>
+            <p class="org">MaxPlorer Aerospace Rescue Team, CANSAT 2021</p>
+            <p>Developed embedded C software and operated the mission ground station, handling real-time data reception, monitoring and analysis.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap section-grid">
+      <h2>Projects</h2>
+      <div>
+        <article class="project">
+          <h3>Mobility Workflow Platform</h3>
+          <p>A web platform that runs the academic mobility paperwork at IST, from document filling to coordinator validation and post-mobility document reading. It replaced manual data entry, email coordination and disconnected templates.</p>
+          <p>It generates the PEI, the Learning Agreement, the Changes LA and the PEF with correct values for every evaluated user. It is in active use at DEI, and an extension to DEG is under way. Twenty students rated it 89.88 on an adapted System Usability Scale, and the coordinator highlighted the centralised process history and status tracking.</p>
+          <p class="built">Built with HTML/JS, PHP, MySQL, the Fénix API and institutional SSO.</p>
+        </article>
+
+        <article class="project">
+          <h3>Locally run LLM agents for document workflows</h3>
+          <p>Thesis research comparing agent architectures for filling and reading official documents without sending data to external services. Strategies ranged from zero-shot prompting to multi-agent decomposition, iterative self-correction and retrieval-augmented generation. Filling agents were evaluated on 46 real mobility processes and reading agents on 12 real transcripts of records.</p>
+          <ul class="findings">
+            <li><b>Model capability is a hard constraint.</b> The gap between Qwen2.5 and Llama 3.2 held across every architecture, so the minimum model size should be established before choosing an architecture.</li>
+            <li><b>Normalise inputs before any LLM call.</b> Standardising dates, computing derived fields and filtering irrelevant data stops agents from handling structure inconsistently.</li>
+            <li><b>Name PDF fields for meaning.</b> Descriptive identifiers improved accuracy by up to 30.6 percentage points across every architecture.</li>
+            <li><b>Vision only works with a capable model.</b> Vision-based reading matched or beat text-based reading with Qwen2.5-VL, while a weaker multimodal model dropped substantially.</li>
+            <li><b>Plan for human review.</b> The best filling agent reached 81.3% field accuracy, which is a draft rather than a final document, in line with the transparency requirements of the EU AI Act.</li>
+          </ul>
+          <p class="built">Built with Ollama, Qwen2.5, Llama 3.2, RAG and multi-agent patterns.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap section-grid">
+      <h2>Skills</h2>
+      <dl class="skills">
+        <div><dt>AI and ML</dt><dd>Agentic AI architectures, LLMs (Qwen2.5, Llama 3.2), Ollama, prompt engineering, RAG, PyTorch, scikit-learn</dd></div>
+        <div><dt>Data</dt><dd>Apache Spark, Pandas, NumPy, data cleaning, transformation and feature engineering, SQL and MySQL</dd></div>
+        <div><dt>Engineering</dt><dd>Python, Java, JavaScript, PHP, C/C++, REST APIs, Git, GitHub and GitLab, Agile, Scrum and Jira</dd></div>
+        <div><dt>Cloud and infrastructure</dt><dd>AWS, Docker</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="wrap section-grid">
+      <h2>Education</h2>
+      <div>
+        <ul class="edu">
+          <li>
+            <div class="when">2024 to 2026</div>
+            <div><strong>MSc, Computer Science and Engineering</strong><span class="sub">Instituto Superior Técnico, Lisbon. AI and Data Science specialisation.</span></div>
+          </li>
+          <li>
+            <div class="when">Autumn 2025</div>
+            <div><strong>Erasmus exchange, Computer Science and Engineering</strong><span class="sub">Lund University, Sweden</span></div>
+          </li>
+          <li>
+            <div class="when">2021 to 2024</div>
+            <div><strong>BSc, Computer Science and Engineering</strong><span class="sub">Instituto Superior Técnico, Lisbon</span></div>
+          </li>
+        </ul>
+        <h3 class="sub-head">Volunteering</h3>
+        <ul class="edu">
+          <li>
+            <div class="when">2023</div>
+            <div><strong>Lead Volunteer, Web Summit Lisbon</strong><span class="sub">Coordinated volunteer teams supporting event operations.</span></div>
+          </li>
+          <li>
+            <div class="when">2012 to 2025</div>
+            <div><strong>Scout, Corpo Nacional de Escutas</strong><span class="sub">A decade of leadership, teamwork and community organisation.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="wrap section-grid">
+      <h2>Contact</h2>
+      <div>
+        <div class="prose"><p>I am looking for Data and AI engineering roles in Europe, ideally in Belgium. Email is the quickest way to reach me.</p></div>
+        <a class="mail" href="mailto:miguelazevedoalves@gmail.com">miguelazevedoalves@gmail.com</a>
+        <div class="links">
+          <a class="btn" href="CV%20-%20Miguel%20Azevedo%20Alves.pdf" download="Miguel Alves - CV.pdf">Download CV</a>
+          <a class="btn" href="https://github.com/MiguelAlves27" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/miguel-alves-a0b26a185" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Miguel Azevedo Alves, 2026</div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Theme toggle */
+  var btn = document.getElementById('themeBtn');
+  try { var saved = localStorage.getItem('theme'); if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved); } catch (e) {}
+  function isDark() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function label() { btn.textContent = isDark() ? 'Light mode' : 'Dark mode'; }
+  btn.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
+  });
+  label();
+
+  /* Pipeline illustration: mock throughput metrics and a scrolling log */
+  var mRows = document.getElementById('mRows');
+  var mLatency = document.getElementById('mLatency');
+  var mUptime = document.getElementById('mUptime');
+  var pipelineLog = document.getElementById('pipelineLog');
+
+  var logLines = [
+    'extract   postgres.orders         rows=12,400',
+    'extract   api:crm_contacts        rows=3,180',
+    'transform dedup, cast_types       rows_out=15,340',
+    'transform normalise_dates         rows_out=15,340',
+    'load      warehouse.fact_orders   rows=12,400  latency=142ms',
+    'load      warehouse.dim_contacts  rows=3,180   latency=98ms'
+  ];
+
+  function fmt(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+  var rowsBase = 980;
+  var start = Date.now();
+  var timers = [];
+
+  function tickMetrics() {
+    var jitter = Math.round((Math.random() - 0.5) * 360);
+    mRows.textContent = fmt(Math.max(120, rowsBase + jitter));
+    mLatency.textContent = (90 + Math.round(Math.random() * 90)) + ' ms';
+    var elapsed = Math.floor((Date.now() - start) / 1000);
+    var h = Math.floor(elapsed / 3600), m = Math.floor((elapsed % 3600) / 60), s = elapsed % 60;
+    mUptime.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
+  }
+
+  var logIndex = 0;
+  function tickLog() {
+    var visible = 4;
+    var lines = [];
+    for (var i = visible - 1; i >= 0; i--) {
+      lines.push(logLines[(logIndex - i + logLines.length * 2) % logLines.length]);
+    }
+    pipelineLog.textContent = lines.join('\n');
+    logIndex = (logIndex + 1) % logLines.length;
+  }
+
+  if (reduce) {
+    mRows.textContent = fmt(rowsBase);
+    mLatency.textContent = '124 ms';
+    mUptime.textContent = '00:00:00';
+    tickLog();
+  } else {
+    tickMetrics();
+    tickLog();
+    timers.push(setInterval(tickMetrics, 1000));
+    timers.push(setInterval(tickLog, 1600));
+  }
+
+  /* Active section in nav */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav li a'));
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          links.forEach(function (a) {
+            if (a.getAttribute('href') === '#' + en.target.id) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
